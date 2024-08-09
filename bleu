@@ -1,0 +1,7 @@
+from nltk.translate.bleu_score import sentence_bleu
+
+reference = ["This is a reference compliance document."]
+candidate = generated_text.split()
+score = sentence_bleu([reference], candidate)
+
+print(f"BLEU score: {score:.4f}")
