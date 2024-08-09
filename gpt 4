@@ -1,0 +1,19 @@
+response = openai.Completion.create(
+    engine="text-davinci-004",
+    prompt="Generate a clinical evaluation report based on the following data...",
+    max_tokens=1024
+)
+
+prompt = """
+ a detailed clinical evaluation report for a new medical device based on the following clinical data...
+"""
+
+response = openai.Completion.create(
+    engine="text-davinci-004",
+    prompt=prompt,
+    max_tokens=1024,
+    n=1,
+    stop=None,
+    temperature=0.7
+)
+
