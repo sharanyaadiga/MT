@@ -1,0 +1,11 @@
+from rouge_score import rouge_scorer
+
+scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
+
+# ROUGE score for GPT-4
+scores_gpt2_rouge = scorer.score(preprocess_text("This is a reference compliance document."), preprocess_text(generated_text_gpt4))
+print(f"ROUGE scores for GPT-4: {scores_gpt4_rouge}")
+
+# ROUGE score for T5
+scores_t5_rouge = scorer.score(preprocess_text("This is a reference compliance document."), preprocess_text(generated_text_t5))
+print(f"ROUGE scores for T5: {scores_t5_rouge}")
