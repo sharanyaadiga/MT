@@ -2,10 +2,10 @@ from nltk.translate.bleu_score import sentence_bleu
 
 reference = [preprocess_text("This is a reference compliance document.").split()]
 
-# BLEU score for GPT-2
-candidate_gpt2 = preprocess_text(generated_text_gpt2).split()
-score_gpt2_bleu = sentence_bleu(reference, candidate_gpt2)
-print(f"BLEU score for GPT-2: {score_gpt2_bleu:.4f}")
+# BLEU score for GPT-4
+candidate_gpt4 = preprocess_text(generated_text_gpt4).split()
+score_gpt4_bleu = sentence_bleu(reference, candidate_gpt2)
+print(f"BLEU score for GPT-4: {score_gpt4_bleu:.4f}")
 
 # BLEU score for T5
 candidate_t5 = preprocess_text(generated_text_t5).split()
