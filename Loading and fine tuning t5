@@ -1,0 +1,16 @@
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+
+model_name = "t5-base"  # You can choose from 'small', 'base', 'large', '3B', '11B'
+tokenizer = T5Tokenizer.from_pretrained(model_name)
+model = T5ForConditionalGeneration.from_pretrained(model_name)
+
+from transformers import Trainer, TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir="./results",
+    per_device_train_batch_size=8,
+    per_device_eval_batch_size=8,
+    num_train_epochs=3,
+    learning_rate=3e-5,
+    logging_dir="./logs",
+)
